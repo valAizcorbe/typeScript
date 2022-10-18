@@ -12,7 +12,7 @@ export class User {
         return `${this.firstName} ${this.lastName}`
     }
 
-    checkMatch(email: string): boolean{
-        return this.email ===email
+    checkMatch(email: string): boolean {
+        return this.email === email
     }
 }
