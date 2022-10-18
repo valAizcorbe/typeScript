@@ -1,7 +1,16 @@
 export class Message {
     title: string;
     message: string;
-    isSent: boolean;
+    private _isSent: boolean;
+    set isSent(value: boolean){
+        if(value === true){
+            this.deliveryDate= new Date();
+        }
+        this._isSent=value;
+    }
+    get isSent(): boolean {
+        return this._isSent;
+    }
     deliveryDate: Date;
 
     constructor(title: string, message: string){
@@ -28,5 +37,6 @@ const message = new Message(
     'Learn our latest course with TypeScript'
 )
 
+message.isSent = true;
 message.messageStatus;
 message.previewMessage();
